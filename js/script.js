@@ -12,8 +12,10 @@
 
 
 //////////////////////////////////////////////////
-// Milestone 1
-// Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
+// Milestone 1 
+// + 
+// Milestone 2
+
 
 const data = [
 	{
@@ -141,8 +143,33 @@ data.forEach((element) =>{
       app.innerHTML += litTemplate;
       console.log(litTemplate);
 });
-
 // console.log(data);
 
 
+//////////////////////////////////////////////////
+// Milestone 3
+// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
+
+let options = [];
+
+switch(selectOptions()) {
+	case 'animals': 
+		let animals = data.filter((data) =>data.type === 'animal');
+		choseOption(animals);
+		break;
+	case 'vegetables':
+		let vegetables = data.filter((data) =>data.type === 'vegetable');
+		choseOption(vegetables);
+		break;
+		case 'users':
+			let users = data.filter((data) =>data.type === 'user');
+			choseOption(users);
+			break;
+	case 'all':
+		choseOption(all);
+		break;
+	default:
+		choseOption(data);
+	
+}
