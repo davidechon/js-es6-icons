@@ -5,15 +5,18 @@ box-sizing: border-box;
 }
 
 .icons{
-  width: 100px;
+  width: 150px;
   height: 100px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
   font-size: 50px;
+  margin: 20px;
+  text-align: center;
   border: 1px solid red;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 2px 1px 15px #3c3c3c ;
+  border-radius: 30px;
 }
 .etichetta{
-  font-size: 10px;
+  font-size: 15px;
+  margin-top: -10px;
 }

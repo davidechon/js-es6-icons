@@ -125,13 +125,27 @@ const data = [
 	}
 ];
 
+// Bisogna cambiare il valore di data.color da striga a esadecimale!!!!
+// string.fontcolor("color")
+// let coloreNome = [
+//   {
+//     nome: 'blue',
+//     codiceColore: 'da cambiare'
+//   }
+// ];
+// const blue = coloreNome.filter((element) => {
+//   if(coloreNome = 'blue')
+//   return true;
+// });
+// console.log(blue);
+
 let litTemplate = "";
 data.forEach((element) =>{
   litTemplate =`
-          <div class="icons">
-            <span><i class="${element.family} ${element.prefix + element.name}"></i></span>
-            <p class="etichetta">${element.name}</p>
-          </div>
+        <div class="icons ">
+          <span><i class="${element.family} ${element.prefix + element.name} ${element.color}"></i></span>
+          <p class="etichetta">${element.name}</p>
+        </div>
       `;
       app.innerHTML += litTemplate;
       console.log(litTemplate);
@@ -139,20 +153,3 @@ data.forEach((element) =>{
 
 
 
-// for(let i = 0; i < data.length; i++){
-//   // console.log(data[i].img);
-//   // console.log(data[i].role);
-//   for(let key in data[i]){
-//       // console.log(key);
-//       // console.log(data[key]);
-//       litTemplate =`
-//           <div class="icons">
-//             <span><i class="fa-solid fa-${data[i].name}"></i></span>
-//           </div>
-//       `;
-//   }
-//   // let icons = document.querySelector(".team-container");
-//   // console.log("check01 ", litTemplate);
-//   app.innerHTML += litTemplate;
-// }
- // <img src="${data[i].img}" alt="${data[i].fullName}"/>
