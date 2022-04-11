@@ -4,3 +4,16 @@ padding: 0;
 box-sizing: border-box;
 }
 
+.icons{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border: 1px solid red;
+}
+.etichetta{
+  font-size: 10px;
+}
