@@ -10,6 +10,11 @@
 // 1- modificare la struttura dati fornita e valorizzare la proprietà "color" in modo dinamico: generare in modo casuale un codice colore, sapendo che la notazione esadecimale è formata dal simbolo "#" seguito da 6 caratteri alfanumerici compresi tra 0 e 9 e A e F.
 // 2- popolare le options della select della milestone 3 dinamicamente.
 
+
+//////////////////////////////////////////////////
+// Milestone 1
+// Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
+
 const data = [
 	{
 		name: 'cat',
@@ -125,24 +130,10 @@ const data = [
 	}
 ];
 
-// Bisogna cambiare il valore di data.color da striga a esadecimale!!!!
-// string.fontcolor("color")
-// let coloreNome = [
-//   {
-//     nome: 'blue',
-//     codiceColore: 'da cambiare'
-//   }
-// ];
-// const blue = coloreNome.filter((element) => {
-//   if(coloreNome = 'blue')
-//   return true;
-// });
-// console.log(blue);
-
 let litTemplate = "";
 data.forEach((element) =>{
   litTemplate =`
-        <div class="icons ">
+        <div class="icons">
           <span><i class="${element.family} ${element.prefix + element.name} ${element.color}"></i></span>
           <p class="etichetta">${element.name}</p>
         </div>
@@ -150,6 +141,8 @@ data.forEach((element) =>{
       app.innerHTML += litTemplate;
       console.log(litTemplate);
 });
+
+// console.log(data);
 
 
 
