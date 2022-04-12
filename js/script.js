@@ -137,34 +137,39 @@ data.forEach((element) =>{
   litTemplate =`
         <div class="icons">
           <span><i class="${element.family} ${element.prefix + element.name} ${element.color}"></i></span>
-          <p class="etichetta">${element.name}</p>
+          <p class="etichetta">${element.name.toUpperCase()}</p>
         </div>
       `;
       app.innerHTML += litTemplate;
       console.log(litTemplate);
 });
-// console.log(data);
 
 
 //////////////////////////////////////////////////
 // Milestone 3
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+// function printAllIcons(filteredIcon){
+// 	filteredIcon.forEach((icona)=>{
+// 		const box = document.createElement('div');
+// 		box.setAttribute('class', 'box');
+// 		box.innerHTML = `
+// 		<i class="${element.family} ${element.prefix}${element.name}" style:"color:${element.color}"></i>
+// 		<div class="etichetta">${element.name.toUpperCase()}</div>
+// 		`
+// 		// console.log(box);
+// 	})
+// 	container.append(box);
+// }
 
+const typeElement = document.getElementById('options');
+// console.log(typeElement)
+typeElement.addEventListener('change', function(){
+	const iconType = this.value;
+	const filteredIcons = data.filter((icona)=>{
+		return icona.type === iconType || iconType === '';
+	})
+	console.log(iconType)
+	console.log(filteredIcons)
+})
+printAllIcons(filteredIcons);
 
-switch(select) {
-	case '0':
-		default:
-		select(all);
-		break;
-	case "1": 
-		let select = data.filter((data) => data.type === 'animal');
-		break;
-	case '2':
-		let vegetables = data.filter((data) =>data.type === 'vegetable');
-		choseOption(vegetables);
-		break;
-		case '3':
-			let users = data.filter((data) =>data.type === 'user');
-			choseOption(users);
-			break;
-}
