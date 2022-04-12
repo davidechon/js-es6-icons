@@ -151,25 +151,20 @@ data.forEach((element) =>{
 // Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone (animal, vegetable, user). Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
 
 
-let options = [];
-
-switch(selectOptions()) {
-	case 'animals': 
-		let animals = data.filter((data) =>data.type === 'animal');
-		choseOption(animals);
+switch(select) {
+	case '0':
+		default:
+		select(all);
 		break;
-	case 'vegetables':
+	case "1": 
+		let select = data.filter((data) => data.type === 'animal');
+		break;
+	case '2':
 		let vegetables = data.filter((data) =>data.type === 'vegetable');
 		choseOption(vegetables);
 		break;
-		case 'users':
+		case '3':
 			let users = data.filter((data) =>data.type === 'user');
 			choseOption(users);
 			break;
-	case 'all':
-		choseOption(all);
-		break;
-	default:
-		choseOption(data);
-	
 }
