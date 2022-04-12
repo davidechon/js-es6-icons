@@ -171,5 +171,5 @@ typeElement.addEventListener('change', function(){
 	console.log(iconType)
 	console.log(filteredIcons)
 })
-printAllIcons(filteredIcons);
+// printAllIcons(filteredIcons);
 
