@@ -17,7 +17,7 @@
 // Milestone 2
 
 
-const data = [
+const icons = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -133,7 +133,7 @@ const data = [
 ];
 
 let litTemplate = "";
-data.forEach((element) =>{
+icons.forEach((element) =>{
   litTemplate =`
         <div class="icons">
           <span><i class="${element.family} ${element.prefix + element.name} ${element.color}"></i></span>
@@ -141,7 +141,7 @@ data.forEach((element) =>{
         </div>
       `;
       app.innerHTML += litTemplate;
-      console.log(litTemplate);
+      // console.log(litTemplate);
 });
 
 
@@ -160,16 +160,39 @@ data.forEach((element) =>{
 // 	})
 // 	container.append(box);
 // }
-
-const typeElement = document.getElementById('options');
-// console.log(typeElement)
-typeElement.addEventListener('change', function(){
-	const iconType = this.value;
-	const filteredIcons = data.filter((icona)=>{
-		return icona.type === iconType || iconType === '';
-	})
-	console.log(iconType)
-	console.log(filteredIcons)
-})
+// ----------------------------------------------------------
+// const typeElement = document.getElementById('options');
+// // console.log(typeElement)
+// typeElement.addEventListener('change', function(){
+// 	const iconType = this.value;
+// 	const filteredIcons = data.filter((icon)=>{
+// 		return icon.type === iconType || iconType === '';
+// 	})
+// 	// console.log(iconType)
+// 	// console.log(filteredIcons)
+// })
 // printAllIcons(filteredIcons);
+// ----------------------------------------------------------
+
+function filter() {
+	let elementoFiltrato = document.getElementById("options").value;
+	document.getElementById("demo").innerHTML = "You selected: " + elementoFiltrato;
+
+	if (elementoFiltrato === icons.type) {
+		
+		icons.forEach((elementoFiltrato) =>{
+			litTemplate =`
+						<div class="icons">
+							<span><i class="${element.family} ${element.prefix + element.name} ${element.color}"></i></span>
+							<p class="etichetta">${element.name.toUpperCase()}</p>
+						</div>
+					`;
+					app.innerHTML += litTemplate;
+					console.log(elementoFiltrato);
+	});
+
+
+
+	}
+}
 
