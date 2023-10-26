@@ -27,18 +27,59 @@
       <h1>FontIcons</h1>
       <div class="nav col-12 justify-content-center align-items-center">
         <h2>Filtra per tipo</h2>
-        <select id="options" onchange="filter()">
-          <option value="">all</option>
+        <select id="options" onchange="filterSelection()">
+          <option value="all">all</option>
           <option value="animals">Animali</option>
           <option value="vegetables">Vegetali</option>
           <option value="users">Persone</option>
         </select>
       </div>
+
+      <!-------------------------------------------------------------------->
+
+      <div id="myBtnContainer2">
+        <button class="btn active" onclick="filterSelection('all')">Show all</button>
+        <button class="btn" onclick="filterSelection('animals')">Animals</button>
+        <button class="btn" onclick="filterSelection('vegetables')">Vegetali</button>
+        <button class="btn" onclick="filterSelection('users')">Persone</button>
+      </div>
+
+      <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
+      <div class="container">
+        <div class="filterDiv cars">BMW</div>
+        <div class="filterDiv colors vegetables">Orange</div>
+        <div class="filterDiv cars">Volvo</div>
+        <div class="filterDiv colors">Red</div>
+        <div class="filterDiv cars">Ford</div>
+        <div class="filterDiv colors">Blue</div>
+        <div class="filterDiv animals">Cat</div>
+        <div class="filterDiv animals">Dog</div>
+        <div class="filterDiv vegetables">Melon</div>
+        <div class="filterDiv vegetables animals">Kiwi</div>
+        <div class="filterDiv vegetables">Banana</div>
+        <div class="filterDiv vegetables">Lemon</div>
+        <div class="filterDiv animals">Cow</div>
+        <div class="filterDiv users">Nikol</div>
+        <div class="filterDiv users colors">Orange</div>
+        <div class="filterDiv users">Lelouce</div>
+        <div class="filterDiv users">Satoru</div>
+        <div class="filterDiv users">Hime</div>
+      </div>
+
+      <!-------------------------------------------------------------------->
+      <!-------------------------------------------------------------------->
+      <!-- <div class="icons">
+        <div class="filterDiv ${element.type}"><i
+            class="${element.family} ${element.prefix + element.name} ${element.color}"></i></div>
+        <p class="etichetta">${element.name.toUpperCase()}</p>
+      </div> -->
+      <!-------------------------------------------------------------------->
+
     </header>
     <main>
       <div class="container">
-        <div id="app" class="row d-flex justify-content-start">
-          <p id="demo"></p>
+        <!-- <div id="app" class="row d-flex justify-content-start"> -->
+        <div id="myBtnContainer" class="row d-flex justify-content-start">
           <div class="col-12">
 
           </div>
