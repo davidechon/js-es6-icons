@@ -126,11 +126,15 @@ const icons = [
 
 function createBoxIcon(icon) {
 
-    return `
-    <div class="box ${icon.type}">
-			<i class="${icon.family} ${icon.prefix + icon.name} ${icon.color}"></i>
-			<p class="etichetta">${icon.name.toUpperCase()}</p>
+	return `
+	<div class="row justify-content-center align-items-center">
+    <div class="col-12">
+			<div class="box ${icon.type}">
+				<i class="${icon.family} ${icon.prefix + icon.name} ${icon.color}"></i>
+				<p class="etichetta">${icon.name.toUpperCase()}</p>
+			</div>
 		</div>
+	</div>		
     `
 }
 
