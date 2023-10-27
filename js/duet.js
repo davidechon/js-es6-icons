@@ -123,27 +123,49 @@ const icons = [
         //   <i class="${element.family} ${element.prefix + element.name} ${element.color}"></i>
         //   <p class="etichetta">${element.name.toUpperCase()}</p>
 // </div>
+
+//<li>
+//	<i class="${icons.family} ${icons.prefix + icons.name} ${icons.color}"></i>
+//  <span class="icon-name">${icons.name}</span>
+//</li>
 				
 
 
 
 // Crea un template per l'icona
 const iconTemplate = `
-<li>
-	<i class="${icons.family} ${icons.prefix + icons.name} ${icons.color}"></i>
-  <span class="icon-name">${icons.name}</span>
-</li>
-`;
+		<li>
+			<i class="${icons.family} ${icons.prefix + icons.name} ${icons.color}"></i>
+		</li>
+		`;
+
+		iconsId.innerHTML += iconTemplate;
+
+//------------------------------------------------
+// filtro solo animal
+// const type = "animal";
+//------------------------------------------------
 
 // Filtra le icone in base al tipo
-const filteredIcons = filterIconsByType(icons, 'all');
-const filteredAnimalIcons = filterIconsByType(icons, 'animal');
-const filteredVegetableIcons = filterIconsByType(icons, 'vegetable');
-const filteredUserIcons = filterIconsByType(icons, 'user');
+const filteredIcons = filterIconsByType(icons, "vegetable");
+// let iconeFiltrate = icons.filter(icon => icon.type <= "animal")
 
 // Popola l'elenco con le icone filtrate
-const iconsList = document.getElementById('icons');
-iconsList.innerHTML = filteredIcons.map(icon => iconTemplate).join('');
+const iconsList = document.getElementById('iconsId');
+iconsList.innerHTML = filteredIcons.map(i => iconTemplate).join('');
+console.log(filteredIcons);
+console.log(iconTemplate);
+
+// Filtra le icone in base al tipo
+// const filteredIcons = filterIconsByType(icons, type);
+// const filteredAnimalIcons = filterIconsByType(icons, 'animal');
+// const filteredVegetableIcons = filterIconsByType(icons, 'vegetable');
+// const filteredUserIcons = filterIconsByType(icons, 'user');
+
+// Popola l'elenco con le icone filtrate
+// const iconsList = document.getElementById('icons');
+// iconsList.innerHTML = filteredIcons.map(icon => iconTemplate).join('');
+// console.log(filteredIcons);
 
 //------------------------------------------------
 function filterIconsByType(icons, type) {
@@ -153,7 +175,7 @@ function filterIconsByType(icons, type) {
       filteredIcons.push(icon);
     }
   }
-  return filteredIcons;
+	return filteredIcons;
 }
 
 // Esempio di utilizzo:

@@ -19,7 +19,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>js-es6-icons</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/styleDuet.css">
   </head>
 
   <body>
@@ -27,93 +28,54 @@
       <h1>FontIcons</h1>
       <div class="nav col-12 justify-content-center align-items-center">
         <h2>Filtra per tipo</h2>
-        <!-- <select id="options" onchange="filterSelection()"> -->
+        <!-- <select id="options" onchange="filterSelection()">
         <option value="all">all</option>
         <option value="animals">Animali</option>
         <option value="vegetables">Vegetali</option>
         <option value="users">Persone</option>
-        </select>
+        </select> -->
       </div>
 
       <!-------------------------------------------------------------------->
-
+      <!-------------------------------------------------------------------->
       <!-- <div id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')">Show all</button>
-        <button class="btn" onclick="filterSelection('animal')">Animale</button>
-        <button class="btn" onclick="filterSelection('vegetable')">Vegetale</button>
-        <button class="btn" onclick="filterSelection('user')">Persona</button>
+        <button class="btn" onclick="filteredAnimalIcons('animal')">Animale</button>
+        <button class="btn" onclick="filteredVegetableIcons('vegetable')">Vegetale</button>
+        <button class="btn" onclick="filteredUserIcons('user')">Persona</button>
       </div> -->
-
-      <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
-      <!-- <div class="container">
-        <div id="myBtnContainer" class="row d-flex justify-content-start">
-          <div class="col-12">
-
-            <div class="col icons cars">BMW</div>
-            <div class="col icons colors vegetables">Orange</div>
-            <div class="col icons cars">Volvo</div>
-            <div class="col icons colors">Red</div>
-            <div class="col icons cars">Ford</div>
-            <div class="col icons colors">Blue</div>
-            <div class="col icons animals">Cat</div>
-            <div class="col icons animals">Dog</div>
-            <div class="col icons vegetables">Melon</div>
-            <div class="col icons vegetables animals">Kiwi</div>
-            <div class="col icons vegetables">Banana</div>
-            <div class="col icons vegetables">Lemon</div>
-            <div class="col icons animals">Cow</div>
-            <div class="col icons users">Nikol</div>
-            <div class="col icons users colors">Orange</div>
-            <div class="col icons users">Lelouce</div>
-            <div class="col icons users">Satoru</div>
-            <div class="col icons users">Hime</div>
-
-          </div>
-
-        </div>
-
-      </div> -->
-
       <!-------------------------------------------------------------------->
       <!-------------------------------------------------------------------->
-      <!-- <div class="icons">
-        <div class="icons ${element.type}"><i
-            class="${element.family} ${element.prefix + element.name} ${element.color}"></i></div>
-        <p class="etichetta">${element.name.toUpperCase()}</p>
-      </div> -->
+      <label>
+        Seleziona le icone per tipo:
+        <select name="icon-filter" id="icon-filter">
+          <option value="all">All</option>
+          <option value="animal">Animal</option>
+          <option value="vegetable">Vegetable</option>
+          <option value="user">User</option>
+        </select>
+      </label>
       <!-------------------------------------------------------------------->
 
     </header>
     <main>
       <!-------------------------------------------------------------------->
-      <section class="debug">
-        <ul id="icons">
-
-        </ul>
-      </section>
+      <!-- scriptDuet -->
       <!-------------------------------------------------------------------->
-      <!-- 
-      <div id="myBtnContainer">
-        <button class="btn active" onclick="filterSelection('all')">Show all</button>
-        <button class="btn" onclick="filteredAnimalIcons('animal')">Animale</button>
-        <button class="btn" onclick="filteredVegetableIcons('vegetable')">Vegetale</button>
-        <button class="btn" onclick="filteredUserIcons('user')">Persona</button>
-      </div>
       <div class="container">
-        < !-- <div id="app" class="row d-flex justify-content-start"> -->
-      <!-- <div id="myBtnContainer" class="row d-flex justify-content-start debug"> -- >
-        <div class="row d-flex justify-content-start debug">
-          <div class="col-12">
+      </div> <!-- /container-->
+      <!-------------------------------------------------------------------->
+      <!-------------------------------------------------------------------->
 
-          </div>
-        </div>
-      </div> -->
+
+
     </main>
 
 
 
     <!-- <script src="../js/script.js"></script> -->
-    <script src="../js/duet.js"></script>
+    <!-- <script src="../js/duet.js"></script> -->
+    <script src="../js/scriptDuet.js"></script>
   </body>
 
 </html>
