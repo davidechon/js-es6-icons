@@ -27,49 +27,57 @@
       <h1>FontIcons</h1>
       <div class="nav col-12 justify-content-center align-items-center">
         <h2>Filtra per tipo</h2>
-        <select id="options" onchange="filterSelection()">
-          <option value="all">all</option>
-          <option value="animals">Animali</option>
-          <option value="vegetables">Vegetali</option>
-          <option value="users">Persone</option>
+        <!-- <select id="options" onchange="filterSelection()"> -->
+        <option value="all">all</option>
+        <option value="animals">Animali</option>
+        <option value="vegetables">Vegetali</option>
+        <option value="users">Persone</option>
         </select>
       </div>
 
       <!-------------------------------------------------------------------->
 
-      <div id="myBtnContainer3">
+      <!-- <div id="myBtnContainer">
         <button class="btn active" onclick="filterSelection('all')">Show all</button>
-        <button class="btn" onclick="filterSelection('animals')">Animals</button>
-        <button class="btn" onclick="filterSelection('vegetables')">Vegetali</button>
-        <button class="btn" onclick="filterSelection('users')">Persone</button>
-      </div>
+        <button class="btn" onclick="filterSelection('animal')">Animale</button>
+        <button class="btn" onclick="filterSelection('vegetable')">Vegetale</button>
+        <button class="btn" onclick="filterSelection('user')">Persona</button>
+      </div> -->
 
       <!-- The filterable elements. Note that some have multiple class names (this can be used if they belong to multiple categories) -->
       <!-- <div class="container">
-        <div class="filterDiv cars">BMW</div>
-        <div class="filterDiv colors vegetables">Orange</div>
-        <div class="filterDiv cars">Volvo</div>
-        <div class="filterDiv colors">Red</div>
-        <div class="filterDiv cars">Ford</div>
-        <div class="filterDiv colors">Blue</div>
-        <div class="filterDiv animals">Cat</div>
-        <div class="filterDiv animals">Dog</div>
-        <div class="filterDiv vegetables">Melon</div>
-        <div class="filterDiv vegetables animals">Kiwi</div>
-        <div class="filterDiv vegetables">Banana</div>
-        <div class="filterDiv vegetables">Lemon</div>
-        <div class="filterDiv animals">Cow</div>
-        <div class="filterDiv users">Nikol</div>
-        <div class="filterDiv users colors">Orange</div>
-        <div class="filterDiv users">Lelouce</div>
-        <div class="filterDiv users">Satoru</div>
-        <div class="filterDiv users">Hime</div>
+        <div id="myBtnContainer" class="row d-flex justify-content-start">
+          <div class="col-12">
+
+            <div class="col icons cars">BMW</div>
+            <div class="col icons colors vegetables">Orange</div>
+            <div class="col icons cars">Volvo</div>
+            <div class="col icons colors">Red</div>
+            <div class="col icons cars">Ford</div>
+            <div class="col icons colors">Blue</div>
+            <div class="col icons animals">Cat</div>
+            <div class="col icons animals">Dog</div>
+            <div class="col icons vegetables">Melon</div>
+            <div class="col icons vegetables animals">Kiwi</div>
+            <div class="col icons vegetables">Banana</div>
+            <div class="col icons vegetables">Lemon</div>
+            <div class="col icons animals">Cow</div>
+            <div class="col icons users">Nikol</div>
+            <div class="col icons users colors">Orange</div>
+            <div class="col icons users">Lelouce</div>
+            <div class="col icons users">Satoru</div>
+            <div class="col icons users">Hime</div>
+
+          </div>
+
+        </div>
+
       </div> -->
 
       <!-------------------------------------------------------------------->
       <!-------------------------------------------------------------------->
       <!-- <div class="icons">
-        <div class="filterDiv ${element.type}"><i
+        <div class="icons ${element.type}"><i
             class="${element.family} ${element.prefix + element.name} ${element.color}"></i></div>
         <p class="etichetta">${element.name.toUpperCase()}</p>
       </div> -->
@@ -77,19 +85,35 @@
 
     </header>
     <main>
+      <!-------------------------------------------------------------------->
+      <section class="debug">
+        <ul id="icons">
+
+        </ul>
+      </section>
+      <!-------------------------------------------------------------------->
+      <!-- 
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')">Show all</button>
+        <button class="btn" onclick="filteredAnimalIcons('animal')">Animale</button>
+        <button class="btn" onclick="filteredVegetableIcons('vegetable')">Vegetale</button>
+        <button class="btn" onclick="filteredUserIcons('user')">Persona</button>
+      </div>
       <div class="container">
-        <!-- <div id="app" class="row d-flex justify-content-start"> -->
-        <div id="myBtnContainer" class="row d-flex justify-content-start">
+        < !-- <div id="app" class="row d-flex justify-content-start"> -->
+      <!-- <div id="myBtnContainer" class="row d-flex justify-content-start debug"> -- >
+        <div class="row d-flex justify-content-start debug">
           <div class="col-12">
 
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
 
 
 
-    <script src="../js/script.js"></script>
+    <!-- <script src="../js/script.js"></script> -->
+    <script src="../js/duet.js"></script>
   </body>
 
 </html>
