@@ -113,28 +113,13 @@ const icons = [
 	}
 ];
 
-// <div class="icons ${element.type}">
-//		<i class="${element.family} ${element.prefix + element.name} ${element.color}"></i>
-//		<p class="etichetta">${element.name.toUpperCase()}</p>
-//	</div>
-
-//	<div class="box ${icon.color}">
-//		<i class="${icon.family} ${icon.prefix}${icon.name}"></i>
-//	</div>
-//------------------------------------------------
-
 
 function createBoxIcon(icon) {
-
 	return `
-	<div class="row justify-content-center align-items-center">
-    <div class="col-12">
 			<div class="box ${icon.type}">
 				<i class="${icon.family} ${icon.prefix + icon.name} ${icon.color}"></i>
 				<p class="etichetta">${icon.name.toUpperCase()}</p>
 			</div>
-		</div>
-	</div>		
     `
 }
 
@@ -151,10 +136,6 @@ function showIcons(container, iconsList) {
 
 showIcons(containerHtml, icons);
 
-
-// selectElement.addEventListener('change', function(event) {
-//     console.log(event.target.value);
-// });
 
 selectElement.addEventListener('change', function () {
     // 1. creiamo un nuovo array con il filter

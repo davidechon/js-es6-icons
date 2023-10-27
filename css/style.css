@@ -24,8 +24,14 @@ header .nav {
   height: 80px;
 }
 
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.icons {
+.box {
   width: 150px;
   height: 100px;
   font-size: 50px;
@@ -38,6 +44,11 @@ header .nav {
   border-radius: 15px;
 }
 
+.box>i {
+  font-size: 40px;
+  filter: drop-shadow(2px 2px 2px #3c3c3c);
+}
+
 .etichetta {
   font-size: 12px;
   margin-top: -5px;
@@ -47,36 +58,15 @@ header .nav {
   color: orange;
 }
 
-.green {
-  color: green;
-}
-
 .blue {
   color: blue;
 }
 
-/************************************************************/
-.container {
-  overflow: hidden;
+.green {
+  color: green;
 }
 
-/* .filterDiv { */
-/* float: left; */
-/* background-color: #2196F3; */
-/* color: #ffffff; */
-/* width: 100px; */
-/* line-height: 100px; */
-/* text-align: center; */
-/* margin: 8px; */
-/* display: none; */
-/* Hidden by default */
-/* } */
-
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
+/*---------------------------------------------------*/
 /* Style the buttons */
 .btn {
   border: none;

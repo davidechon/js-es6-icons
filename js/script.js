@@ -16,7 +16,6 @@
 // + 
 // Milestone 2
 
-
 const icons = [
 	{
 		name: 'cat',
@@ -133,89 +132,37 @@ const icons = [
 ];
 
 
-
-let litTemplate = "";
-icons.forEach((element) =>{
-  litTemplate =`
-        <div class="icons ${element.type}">
-          <i class="${element.family} ${element.prefix + element.name} ${element.color}"></i>
-          <p class="etichetta">${element.name.toUpperCase()}</p>
-        </div>
-				`;
-      // app.innerHTML += litTemplate;
-      myBtnContainer.innerHTML += litTemplate;
-      // console.log(litTemplate);
-});
-
-//------------------------------------------------
-function filterIconsByType(icons, type) {
-  const filteredIcons = [];
-  for (const icon of icons) {
-    if (icon.type === type) {
-      filteredIcons.push(icon);
-    }
-  }
-  return filteredIcons;
+function createBoxIcon(icon) {
+	return `
+			<div class="box ${icon.type}">
+				<i class="${icon.family} ${icon.prefix + icon.name} ${icon.color}"></i>
+				<p class="etichetta">${icon.name.toUpperCase()}</p>
+			</div>
+    `
 }
 
-// Esempio di utilizzo:
-const filteredAnimalIcons = filterIconsByType(icons, 'animal');
-const filteredVegetableIcons = filterIconsByType(icons, 'vegetable');
-const filteredUserIcons = filterIconsByType(icons, 'user');
-
-// filteredAnimalIcons conterrà le icone cat, crow, dog, dove, dragon, horse, hippo, fish
-// filteredVegetableIcons conterrà le icone carrot, apple-alt, lemon, pepper-hot
-// filteredUserIcons conterrà le icone user-astronaut, user-graduate, user-ninja, user-secret
-//------------------------------------------------
-
-// filterSelection("all")
-// function filterSelection(c) {
-// 	let x, i;
-// 	x = document.getElementsByClassName("icons");
-// 	if (c === "all") c = " ";
-// 	// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-// 	for (i = 0; i < x.length; i++) {
-// 		myRemoveClass(x[i], "show");
-// 		if (x[i].className.indexOf(c) > -1) myAddClass(x[i], "show");
-// 	}
-// }
-
-// // Show filtered elements
-// function myAddClass(element, name) {
-// 	let i, arr1, arr2;
-// 	arr1 = element.className.split(" ");
-// 	arr2 = name.split(" ");
-// 	for (i = 0; i < arr2.length; i++) {
-// 		if (arr1.indexOf(arr2[i]) == -1) {
-// 			element.className += " " + arr2[i];
-			
-// 		}
-// 	}
-// }
-
-// // Hide elements that are not selected
-// function myRemoveClass(element, name) {
-// 	let i, arr1, arr2;
-// 	arr1 = element.className.split(" ");
-// 	arr2 = name.split(" ");
-// 	for (i = 0; i < arr2.length; i++) {
-// 		while (arr1.indexOf(arr2[i]) > -1) {
-// 			arr1.splice(arr1.indexOf(arr2[i]), 1);
-// 		}
-// 	}
-// 	element.className = arr1.join(" ");
-// 	console.log(arr1);
-// }
+const containerHtml = document.querySelector('.container');
+const selectElement = document.getElementById('icon-filter');
 
 
-// // Add active class to the current control button (highlight it)
-// // var btnContainer = document.getElementById("app");
-// var btnContainer = document.getElementById("myBtnContainer");
-// var btns = btnContainer.getElementsByClassName("btn");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-// 	});
-// }
+function showIcons(container, iconsList) {
+    container.innerHTML = ''
+    iconsList.forEach((icon) => {
+        container.innerHTML += createBoxIcon(icon)
+    })
+}
+
+showIcons(containerHtml, icons);
+
+
+selectElement.addEventListener('change', function () {
+    // 1. creiamo un nuovo array con il filter
+    //      che seleziona solo le icone che corrispondono al tipo selezionato
+    // 2. chiamiamo la funzione showIcons con le nuove icone
+
+    const filteredIcons = icons.filter((icon) => {
+        return this.value === 'all' || icon.type === this.value
+    })
+
+    showIcons(containerHtml, filteredIcons)
+})
